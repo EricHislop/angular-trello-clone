@@ -31799,8 +31799,8 @@ $provide.value("$locale", {
 
         if(!newCard) {
           newCard = {
-            name : "Auto added at " + new Date(),
-            description : "some description"
+            name : window.prompt('Task title'),
+            description : "Auto added at " + new Date(),
           };
         }
 
