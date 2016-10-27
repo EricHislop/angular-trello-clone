@@ -1,0 +1,15 @@
+.card{
+    display: block;
+    width: 254px;
+    min-height: 100px;
+    color: #fff;
+    background-color: #494954;
+    border-radius: 8px;
+}
+
+.card-list {
+    display: block;
+    float: left;
+    outline: 1px solid #333;
+    margin-right: 20px;
+}
