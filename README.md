@@ -1,6 +1,6 @@
-# Welcome to Trello Availability
+# Welcome to angular-trello-clone
 
-This App will help you keep track of who is in your office
+This App is a clone of trello built in angular 
 
 ## This application consists of:
 
