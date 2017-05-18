@@ -16,7 +16,9 @@ module.exports = function (grunt) {
                     'bower_components/angular/angular.js',
                     'app.js',
                     'components/card.js',
-                    'components/card-list.js'
+                    'components/card-list.js',
+                    'components/board.js',
+                    'components/app.js'
                 ],
                 dest: 'app-bundle.js',
             },

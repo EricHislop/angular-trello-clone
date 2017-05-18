@@ -26,6 +26,9 @@ body {
     position: relative;
     z-index: 0
 }
+.board {
+    display: inline-block;
+}
 
 .card-list {
     background: #E2E4E6;

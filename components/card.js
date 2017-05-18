@@ -6,9 +6,6 @@ angular.
             '<span>{{$ctrl.card.name}}</span>' +
             '<p>{{$ctrl.card.description}}</p>' +
         '</div>',
-    // controller: function cardDetailController() {
-
-    // },
     bindings: {
         card: '<'
     }

@@ -31773,9 +31773,6 @@ $provide.value("$locale", {
             '<span>{{$ctrl.card.name}}</span>' +
             '<p>{{$ctrl.card.description}}</p>' +
         '</div>',
-    // controller: function cardDetailController() {
-
-    // },
     bindings: {
         card: '<'
     }
@@ -31786,29 +31783,54 @@ $provide.value("$locale", {
         '<div class="card-list">' +
           '<h3>{{$ctrl.title}}</h3>' +
           '<card-detail ng-repeat="card in $ctrl.cards" card="card"></card-detail>' +
+          '<form ng-if="$ctrl.displayForm">' +
+            '<input type="text" ng-model="$ctrl.newCard.name" />' +
+            '<input type="text" ng-model="$ctrl.newCard.description"/>' +
+          '<button type="button" ng-click="$ctrl.addCard($ctrl.newCard)">Save card</button>' +
+          '</form>' +
 
-
-          '<button type="button" ng-click="$ctrl.addCard()">Add card</button>' +
+          '<button type="button" ng-click="$ctrl.displayForm = true">Add card</button>' +
 
         '</div>',
     controller: function cardListController() {
 
       this.cards = [];
 
+      this.newCard = {
+        name : null,
+        description : null
+        
+      };
+      this.newCardDescription = null;
+      this.displayForm = false;
+
       this.addCard = function(newCard) {
 
-        if(!newCard) {
-          newCard = {
-            name : window.prompt('Task title'),
-            description : "Auto added at " + new Date(),
-          };
-        }
-
         this.cards.push(newCard);
+        this.displayForm = false;
+        this.newCard = {};
       };
+
 
     },
     bindings : {
       title : '@'
     }
-  });
+  });;angular.
+  module('trelloclone').
+  component('board', {
+    template:
+        '<div class="board" style="background:{{$ctrl.color}}">' +
+          '<h2>{{$ctrl.title}}</h2>'+
+          '<card-list title="To Do"></card-list>' +
+          '<card-list title="In Progress"></card-list>' +
+          '<card-list title="Done"></card-list>' +
+        '</div>',
+    controller: function boardController() {
+    },
+    bindings : {
+      title : '@',
+      color : '@'
+
+    }
+  });;
